@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="alipay.test1.com.dao.mapper">
+    <insert id="insert" parameterType="alipay.test1.com.entity.info">
+        insert into payinfo values(default ,#{out_trade_no},#{trade_no},#{trade_status},#{gmt_payment})
+    </insert>
+    <delete id="delete" parameterType="alipay.test1.com.entity.info">
+    delete from payinfo where id=#{0}
+</delete>
+    <select id="queryall" resultType="alipay.test1.com.entity.info">
+      select * from payinfo
+    </select>
+    <select id="querybyid" resultType="alipay.test1.com.entity.commodity">
+        select * from commodity where id=#{0}
+    </select>
+
+    <insert id="insertmq" parameterType="alipay.test1.com.entity.commodity">
+        insert into commodity values (#{id},#{price})
+    </insert>
+</mapper>
